@@ -1,22 +1,22 @@
+import React, { useState } from 'react';
 import Task from "./components/Task";
 import "./App.css";
 
 function App() {
+  const [ taskState, setTaskState ] = useState({
+    tasks: [
+      { title: "Dishes", description: "Empty Dishwasher", deadline: "Today" },
+      { title: "Laundry", description: "Fold and put away", deadline: "Tomorrow" },
+      { title: "Walk Dog", deadline: "Today" },
+    ],
+  });
+
   return (
     <div className="container">
       <h1>Tasky</h1>
-      <Task title="Dishes" deadline="Today" description="Empty dishwasher" />
-      <Task
-        title="Laundry"
-        deadline="Tomorrow"
-        description="Fold and put away"
-      />
-      <Task title="Tidy" deadline="Today" />
-      <Task
-        title="Walk dog"
-        deadline="Today"
-        description="At least 40 minutes"
-      />
+      <Task title={taskState.tasks[0].title} deadline={taskState.tasks[0].deadline} description={taskState.tasks[0].description} />
+      <Task title={taskState.tasks[1].title} deadline={taskState.tasks[1].deadline} description={taskState.tasks[1].description} />
+      <Task title={taskState.tasks[2].title} deadline={taskState.tasks[2].deadline} description={taskState.tasks[2].description} />
     </div>
   );
 }
