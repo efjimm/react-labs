@@ -5,13 +5,19 @@ import "./App.css";
 function App() {
   const [taskState, setTaskState] = useState({
     tasks: [
-      { title: "Dishes", description: "Empty Dishwasher", deadline: "Today" },
       {
+        id: 1,
+        title: "Dishes",
+        description: "Empty Dishwasher",
+        deadline: "Today",
+      },
+      {
+        id: 2,
         title: "Laundry",
         description: "Fold and put away",
         deadline: "Tomorrow",
       },
-      { title: "Walk Dog", deadline: "Today" },
+      { id: 3, title: "Walk Dog", deadline: "Today" },
     ],
   });
 
@@ -23,6 +29,7 @@ function App() {
           title={task.title}
           description={task.description}
           deadline={task.deadline}
+          key={task.id}
         />
       ))}
     </div>
