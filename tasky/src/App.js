@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Task from "./components/Task";
+import AddTaskForm from "./components/Form";
 import "./App.css";
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           deleteTask={() => deleteHandler(index)}
         />
       ))}
+      <AddTaskForm />
     </div>
   );
 }
