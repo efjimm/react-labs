@@ -64,7 +64,8 @@ button {
 }
 
 input[type=text],
-input[type=date] {
+input[type=date],
+select {
   width: 60%;
   padding: 12px 20px;
   margin: 8px 0;
