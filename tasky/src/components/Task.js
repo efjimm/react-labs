@@ -12,6 +12,9 @@ function Task(props) {
       <button className="doneButton" onClick={props.markDone}>
         Done
       </button>
+      <button className="deleteButton" onClick={props.deleteTask}>
+        Delete
+      </button>
     </div>
   );
 }
