@@ -13,6 +13,7 @@ function App() {
         description: "Empty Dishwasher",
         deadline: "Today",
         done: false,
+        priority: "medium",
       },
       {
         id: 2,
@@ -20,8 +21,15 @@ function App() {
         description: "Fold and put away",
         deadline: "Tomorrow",
         done: false,
+        priority: "low",
       },
-      { id: 3, title: "Walk Dog", deadline: "Today", done: false },
+      {
+        id: 3,
+        title: "Walk Dog",
+        deadline: "Today",
+        done: false,
+        priority: "high",
+      },
     ],
   });
 
@@ -29,6 +37,7 @@ function App() {
     title: "",
     description: "",
     deadline: "",
+    priority: "",
   });
 
   const doneHandler = (taskIndex) => {
@@ -55,6 +64,9 @@ function App() {
         break;
       case "deadline":
         form.deadline = event.target.value;
+        break;
+      case "priority":
+        form.priority = event.target.value;
         break;
       default:
         form = formState;
@@ -86,6 +98,7 @@ function App() {
           deadline={task.deadline}
           key={task.id}
           done={task.done}
+          priority={task.priority}
           markDone={() => doneHandler(index)}
           deleteTask={() => deleteHandler(index)}
         />
